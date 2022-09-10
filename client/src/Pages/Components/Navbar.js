@@ -18,7 +18,6 @@ function Navbar() {
     useEffect(() => {
         const checkLogging = async () => {
             await axios.post(`${baseUrl}/auth/refresh`, { "refreshToken": refreshToken }).then((response) => {
-                console.log(response)
                 dispatch(LoginAction({ refreshToken, accessToken: response.data.accessToken }))
             }).catch((e) => {
                 localStorage.clear();

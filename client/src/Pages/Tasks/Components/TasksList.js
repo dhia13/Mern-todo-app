@@ -22,7 +22,6 @@ function TasksList({ load, setLoad }) {
     useEffect(() => {
         const getTasks = async () => {
             await axios.get(`${baseUrl}/tasks`, config).then((response) => {
-                console.log(response)
                 setTasks(response.data.tasks)
             })
         }
